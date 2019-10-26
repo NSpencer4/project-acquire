@@ -1,0 +1,18 @@
+.acq-image-wrapper img {
+    max-width: 75%;
+    vertical-align: middle;
+}
+.acq-image-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.MuiCardContent-root {
+    min-height: 100px;
+    vertical-align: middle;
+}
+
+.MuiCardContent-root:last-child {
+    padding-bottom: 16px !important;
+}
