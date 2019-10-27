@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
 import './Homepage.css';
-import {Box} from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 
 class Homepage extends Component {
 
 	render() {
 		return (
-			<div className="Homepage">
-				<Box>
-					<div>In Progress</div>
-				</Box>
+			<div id="home-container" className="Homepage">
+				<section id="banner-text">
+					<h5>Customer Acquisition Analytics</h5>
+					<h6>to empower your business</h6>
+					<Button>Try It Out</Button>
+				</section>
 			</div>
 		);
 	}

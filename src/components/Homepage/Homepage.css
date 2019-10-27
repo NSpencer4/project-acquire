@@ -1,0 +1,10 @@
+#home-container {
+    margin-left: 2%;
+    margin-right: 2%;
+    min-height: 50vh;
+    vertical-align: middle;
+}
+
+#banner-text {
+    margin-top: 20%;
+}
