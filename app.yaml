@@ -1,0 +1,48 @@
+runtime: python27
+threadsafe: yes
+api_version: 1
+
+handlers:
+  - url: /dev.*
+    script: server.dev.app
+
+  - url: /(.*\.woff)
+    mime_type: application/x-font-woff
+    static_files: dist/\1
+    upload: dist/(.*\.woff)
+
+  - url: /(.*\.woff2)
+    mime_type: font/woff2
+    static_files: dist/\1
+    upload: dist/(.*\.woff2)
+
+  - url: /favicon.ico
+    static_files: dist/favicon.ico
+    upload: dist/favicon.ico
+
+  - url: /(.*\.(gif|png|jpg|css|js)(|\.map))$
+    static_files: dist/\1
+    upload: dist/(.*)(|\.map)
+
+  - url: /dist
+    static_dir: dist
+
+  - url: /public
+    static_dir: public
+
+  - url: /(.*)
+    script: server.main.app
+
+libraries:
+  - name: webapp2
+    version: latest
+
+skip_files:
+  - ^node_modules$
+  - ^.*.pyc
+  - ^src$
+  - \.editorconfig
+  - \.gitignore
+  - ^app\.yaml
+  - ^package\.json
+  - ^README\..*
