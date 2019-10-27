@@ -43,6 +43,8 @@ skip_files:
   - ^src$
   - \.editorconfig
   - \.gitignore
+  - ^venv$
+  - ^venv_windows$
   - ^app\.yaml
   - ^package\.json
   - ^README\..*
