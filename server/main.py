@@ -1,15 +1,12 @@
 import webapp2
 import os
-import logging
 from google.appengine.ext.webapp import template
+
+from server.channel import ChannelRequest
 
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
-        """
-        Function: Renders the main html template for the application
-        :return: Html page from index_path
-        """
         template_values = {}
         index_filename = "index.html"
         public_dir = "public"
@@ -19,5 +16,6 @@ class MainPage(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-    ('/.*', MainPage),
+    ('/', MainPage),
+    ('/channel', ChannelRequest)
 ], debug=True)

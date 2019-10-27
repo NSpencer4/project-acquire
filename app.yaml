@@ -31,7 +31,7 @@ handlers:
   - url: /dist
     static_dir: dist
 
-  - url: /(.*)
+  - url: /.*
     script: server.main.app
 
 libraries:

@@ -1,5 +1,3 @@
-import webapp2
-from google.appengine.ext import deferred, ndb
 import logging
 from utils import APIRequest
 
@@ -8,13 +6,13 @@ from models import Channel
 
 class ChannelRequest(APIRequest):
     def post(self):
-        logging.debug('called')
         body = self.check_body([
             'title',
             'img_path'
         ])
+        logging.debug('called')
         try:
-            channel = Channel.query(Channel.steamid64 == body['title']).get()
+            channel = Channel.query(Channel.title == body['title']).get()
             logging.info(body)
 
             if channel:
@@ -26,8 +24,3 @@ class ChannelRequest(APIRequest):
                 self.response.out.write(channel_id)
         except ValueError as e:
             self.abort(code=404, detail=e.message)
-
-
-app = webapp2.WSGIApplication([
-    ('/channel', ChannelRequest)
-])
