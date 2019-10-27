@@ -1,11 +1,31 @@
+@font-face {
+  font-family: "gilroy-light";
+  src: url("/assets/fonts/Gilroy-Light.ttf");
+}
+
+@font-face {
+  font-family: "gilroy-regular";
+  font-weight: bold;
+  src: url("/assets/fonts/Gilroy-Regular.ttf");
+}
+
+@font-face {
+  font-family: "gilroy-bold";
+  src: url("/assets/fonts/Gilroy-Bold.ttf");
+}
+
+@font-face {
+  font-family: "varela-round";
+  src: url("/assets/fonts/varela_round.woff2");
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'varela-round', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #282c34;
+  background-image: url("/assets/analytics.svg");
+  background-position: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -15,7 +35,3 @@ body {
   text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
