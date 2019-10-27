@@ -8,6 +8,7 @@ from models import Channel
 
 class ChannelRequest(APIRequest):
     def post(self):
+        logging.debug('called')
         body = self.check_body([
             'title',
             'img_path'

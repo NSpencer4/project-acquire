@@ -20,15 +20,16 @@ handlers:
     static_files: dist/favicon.ico
     upload: dist/favicon.ico
 
-  - url: /(.*\.(gif|png|jpg|css|js)(|\.map))$
-    static_files: dist/\1
-    upload: dist/(.*)(|\.map)
+  - url: /manifest.json
+    static_files: public/manifest.json
+    upload: public/manifest.json
+
+  - url: /index.html
+    static_files: public/index.html
+    upload: public/index.html
 
   - url: /dist
     static_dir: dist
-
-  - url: /public
-    static_dir: public
 
   - url: /(.*)
     script: server.main.app

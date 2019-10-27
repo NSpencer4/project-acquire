@@ -1,5 +1,6 @@
 import webapp2
 import os
+import logging
 from google.appengine.ext.webapp import template
 
 
@@ -10,8 +11,10 @@ class MainPage(webapp2.RequestHandler):
         :return: Html page from index_path
         """
         template_values = {}
-        index_path = "index.html"
-        path = os.path.join(os.path.dirname(os.path.dirname(__file__)), index_path)
+        index_filename = "index.html"
+        public_dir = "public"
+        path = os.path.join(os.path.dirname(os.path.dirname(__file__)), public_dir, index_filename)
+        self.response.headers['Content-Type'] = 'html'
         self.response.out.write(template.render(path, template_values))
 
 
