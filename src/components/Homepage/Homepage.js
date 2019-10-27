@@ -10,7 +10,7 @@ class Homepage extends Component {
 				<section id="banner-text">
 					<h5>Customer Acquisition Analytics</h5>
 					<h6>to empower your business</h6>
-					<Button>Try It Out</Button>
+					<Button id="try-it-btn">Try It Out</Button>
 				</section>
 			</div>
 		);
