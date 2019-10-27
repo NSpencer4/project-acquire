@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box} from '@material-ui/core';
-import AcquisitionSurvey from './components/AcquisitionSurvey/AcquisitionSurvey';
+import Homepage from './components/Homepage/Homepage';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <h1>Project Acquire</h1>
       </header>
       <Box>
-        <AcquisitionSurvey/>
+        <Homepage/>
       </Box>
     </div>
   );

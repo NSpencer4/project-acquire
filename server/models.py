@@ -3,11 +3,11 @@ from google.appengine.ext import ndb
 
 class Channel(ndb.Model):
     title = ndb.StringProperty()
-    img_path = ndb.StringProperty()
+    base64_img = ndb.StringProperty()
 
     @classmethod
-    def create(cls, title, img_path):
-        channel = cls(title=title, img_path=img_path)
+    def create(cls, title, base64_img):
+        channel = cls(title=title, base64_img=base64_img)
 
         channel.put()
 

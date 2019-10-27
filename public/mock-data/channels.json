@@ -1,30 +1,14 @@
 [
   {
-    "title": "Insurance",
-    "imagePath": "/google.jpg"
-  },
-  {
-    "title": "Word of Mouth",
-    "imagePath": "/google.jpg"
-  },
-  {
     "title": "Google",
-    "imagePath": "/google.jpg"
-  },
-  {
-    "title": "Yelp",
-    "imagePath": "/google.jpg"
-  },
-  {
-    "title": "Doctor Referral",
-    "imagePath": "/google.jpg"
+    "imagePath": "assets/google.jpg"
   },
   {
     "title": "Facebook",
-    "imagePath": "/facebook.png"
+    "imagePath": "assets/facebook.png"
   },
   {
     "title": "Bing",
-    "imagePath": "/bing.png"
+    "imagePath": "assets/bing.png"
   }
 ]
