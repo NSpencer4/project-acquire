@@ -16,3 +16,11 @@
 .MuiCardContent-root:last-child {
     padding-bottom: 16px !important;
 }
+
+#question-wrapper {
+    margin-bottom: 20px;
+}
+
+#channel-section .MuiGrid-item  {
+    cursor: pointer;
+}

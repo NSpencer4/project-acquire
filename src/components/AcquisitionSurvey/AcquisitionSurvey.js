@@ -30,14 +30,14 @@ class AcquisitionSurvey extends Component {
 		let renderedChannels = [];
 		this.state.channels.forEach((channel) => {
 			renderedChannels.push(
-				<Grid item sm={3}>
-					<Card>
-						<CardContent>
-							<section className="acq-image-wrapper">
-								<img src={channel.imagePath} title={channel.title} alt={channel.title}></img>
-							</section>
-						</CardContent>
-					</Card>
+				<Grid item sm={3} key={channel.title}>
+						<Card onClick={() => this.handleChannelChoice(channel.title)}>
+							<CardContent>
+								<section className="acq-image-wrapper">
+									<img src={channel.imagePath} title={channel.title} alt={channel.title}></img>
+								</section>
+							</CardContent>
+						</Card>
 				</Grid>
 			)
 		});
@@ -45,18 +45,23 @@ class AcquisitionSurvey extends Component {
 		return renderedChannels;
 	}
 
+	handleChannelChoice(channelKey) {
+		console.log('called with: ' + channelKey);
+		// TODO: API call to capture choice
+	}
+
 	render() {
 		if (this.state.isLoaded) {
 			return (
 				<Container maxWidth="xl">
 					<Grid container direction="row" justify="center" alignItems="center">
-						<Grid item xs={12}>
+						<Grid item xs={12} id="question-wrapper">
 							<Typography variant="h4">
 								How did you find us?
 							</Typography>
 						</Grid>
 					</Grid>
-					<section id="card-section">
+					<section id="channel-section">
 						<Grid container direction="row" justify="center" alignItems="center" spacing={3}>
 							{this.renderAcquisitionChannels()}
 						</Grid>

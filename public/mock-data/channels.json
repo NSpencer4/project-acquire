@@ -24,10 +24,6 @@
     "imagePath": "/facebook.png"
   },
   {
-    "title": "Yelp",
-    "imagePath": "/yelp.png"
-  },
-  {
     "title": "Bing",
     "imagePath": "/bing.png"
   }
