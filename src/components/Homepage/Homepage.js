@@ -7,9 +7,6 @@ class Homepage extends Component {
 	render() {
 		return (
 			<div className="Homepage">
-				<header className="App-header">
-					<h1>Project Acquire</h1>
-				</header>
 				<Box>
 					<div>In Progress</div>
 				</Box>
