@@ -18,7 +18,7 @@ class Navbar extends Component {
 								<IconButton edge="start" color="inherit" aria-label="menu">
 									<MenuIcon />
 								</IconButton>
-								<Typography variant="Project Acquire">
+								<Typography variant="h6">
 									Project Acquire
 								</Typography>
 								<Button id="login-btn" color="inherit">Login</Button>
