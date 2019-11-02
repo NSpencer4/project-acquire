@@ -57,10 +57,10 @@ class Footer extends Component {
                                     for more detail.</p>
                                 <ul className="social">
                                     <li><a href="https://fb.com/templatemo"><i className="fa fa-facebook"></i></a></li>
-                                    <li><a href="#top"><i className="fa fa-twitter"></i></a></li>
-                                    <li><a href="#top"><i className="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#top"><i className="fa fa-rss"></i></a></li>
-                                    <li><a href="#top"><i className="fa fa-dribbble"></i></a></li>
+                                    <li><a href="/login"><i className="fa fa-twitter"></i></a></li>
+                                    <li><a href="/login"><i className="fa fa-linkedin"></i></a></li>
+                                    <li><a href="/login"><i className="fa fa-rss"></i></a></li>
+                                    <li><a href="/login"><i className="fa fa-dribbble"></i></a></li>
                                 </ul>
                             </div>
                         </div>
