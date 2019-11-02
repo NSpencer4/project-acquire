@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './Navbar.css';
 import Link from "@material-ui/core/Link";
-import Typography from "@material-ui/core/Typography";
 
 class Navbar extends Component {
 
@@ -25,11 +24,14 @@ class Navbar extends Component {
                                         Lava
                                     </a>
                                     <ul className="nav">
-                                        <li className="scroll-to-section"><a href="/welcome"
-                                                                             className="menu-item">Home</a></li>
-                                        <li className="scroll-to-section"><a href="/about"
+                                        <li className="scroll-to-section">
+                                            <Link color="inherit" href="/home">
+                                                Home
+                                            </Link>
+                                        </li>
+                                        <li className="scroll-to-section"><a href="/home"
                                                                              className="menu-item">About</a></li>
-                                        <li className="scroll-to-section"><a href="/testimonials"
+                                        <li className="scroll-to-section"><a href="/home"
                                                                              className="menu-item">Testimonials</a>
                                         </li>
                                         <li className="submenu">
@@ -43,6 +45,11 @@ class Navbar extends Component {
                                         </li>
                                         <li className="scroll-to-section"><a href="/contact-us" className="menu-item">Contact
                                             Us</a></li>
+                                        <li className="scroll-to-section">
+                                            <Link color="inherit" href="/dashboard">
+                                                Dashboard
+                                            </Link>
+                                        </li>
                                         <li className="scroll-to-section">
                                             <Link color="inherit" href="/login">
 												Login
