@@ -13,9 +13,9 @@ class Homepage extends Component {
             <section id="home-container" className="Homepage">
                 <Welcome/>
                 <About/>
-                <div class="left-image-decor"></div>
+                <div className="left-image-decor"></div>
                 <Promo/>
-                <div class="right-image-decor"></div>
+                <div className="right-image-decor"></div>
                 <Testimonials/>
                <Footer/>
             </section>
