@@ -1,20 +1,26 @@
 import React, {Component} from 'react';
 import './Homepage.css';
-import Button from '@material-ui/core/Button';
+import Footer from "../Footer/Footer";
+import Welcome from "../Welcome/Welcome";
+import About from "../About/About";
+import Promo from "../Promo/Promo";
+import Testimonials from "../Testimonials/Testimonials";
 
 class Homepage extends Component {
 
-	render() {
-		return (
-			<div id="home-container" className="Homepage">
-				<section id="banner-text">
-					<h5>Customer Acquisition Analytics</h5>
-					<h6>to empower your business</h6>
-					<Button id="try-it-btn">Try It Out</Button>
-				</section>
-			</div>
-		);
-	}
+    render() {
+        return (
+            <section id="home-container" className="Homepage">
+                <Welcome/>
+                <About/>
+                <div className="left-image-decor"></div>
+                <Promo/>
+                <div className="right-image-decor"></div>
+                <Testimonials/>
+               <Footer/>
+            </section>
+        );
+    }
 }
 
 export default Homepage;

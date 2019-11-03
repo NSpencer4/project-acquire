@@ -1,42 +1,72 @@
 import React, {Component} from 'react';
 import './Navbar.css';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Grid from '@material-ui/core/Grid';
+import Link from "@material-ui/core/Link";
 
 class Navbar extends Component {
 
-	render() {
-		return (
-			<header className="App-header">
-				<div>
-					<AppBar position="static">
-						<Toolbar>
-							<Grid container direction="row" justify="center" alignItems="center">
-								<Grid item sm={1}>
-									<IconButton edge="start" color="inherit" aria-label="menu">
-										<MenuIcon/>
-									</IconButton>
-								</Grid>
-								<Grid item sm={6}>
-									<Typography variant="h6">
-										Project Acquire
-									</Typography>
-									</Grid>
-								<Grid item sm={4}>
-									<Button id="login-btn" color="inherit">Login</Button>
-								</Grid>
-							</Grid>
-						</Toolbar>
-					</AppBar>
-				</div>
-			</header>
-		);
-	}
+    render() {
+        return (
+            <div className="App-header">
+                <div id="preloader">
+                    <div className="jumper">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+
+                <header className="header-area header-sticky">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12">
+                                <nav className="main-nav">
+                                    <a href="index.html" className="logo">
+                                        Lava
+                                    </a>
+                                    <ul className="nav">
+                                        <li className="scroll-to-section">
+                                            <Link color="inherit" href="/home">
+                                                Home
+                                            </Link>
+                                        </li>
+                                        <li className="scroll-to-section"><a href="/home"
+                                                                             className="menu-item">About</a></li>
+                                        <li className="scroll-to-section"><a href="/home"
+                                                                             className="menu-item">Testimonials</a>
+                                        </li>
+                                        <li className="submenu">
+                                            <a href="/login">Drop Down</a>
+                                            <ul>
+                                                <li><a href="/login" className="menu-item">About Us</a></li>
+                                                <li><a href="/login" className="menu-item">Features</a></li>
+                                                <li><a href="/login" className="menu-item">FAQ's</a></li>
+                                                <li><a href="/login" className="menu-item">Blog</a></li>
+                                            </ul>
+                                        </li>
+                                        <li className="scroll-to-section"><a href="/contact-us" className="menu-item">Contact
+                                            Us</a></li>
+                                        <li className="scroll-to-section">
+                                            <Link color="inherit" href="/dashboard">
+                                                Dashboard
+                                            </Link>
+                                        </li>
+                                        <li className="scroll-to-section">
+                                            <Link color="inherit" href="/login">
+												Login
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                    <a href="/login" className='menu-trigger'>
+                                        <span>Menu</span>
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        );
+    }
 }
 
 export default Navbar;
