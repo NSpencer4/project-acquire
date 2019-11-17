@@ -19,11 +19,9 @@ function App() {
 				<Login/>
 			</Route>
 			<Route path="/sign-up">
-				<Navbar/>
 				<SignUp/>
 			</Route>
 			<Route path="/dashboard">
-				<Navbar/>
 				<Dashboard/>
 			</Route>
 		</Router>
