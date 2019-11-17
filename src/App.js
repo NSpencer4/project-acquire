@@ -5,7 +5,6 @@ import Login from "./components/Login/Login";
 import SignUp from "./components/SignUp/SignUp";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Homepage from './components/Homepage/Homepage';
-import Theme from './components/Theme/Theme';
 
 function App() {
 	return (
@@ -16,11 +15,7 @@ function App() {
 			<Route path="/home">
 				<Homepage/>
 			</Route>
-			<Route path="/theme">
-				<Theme/>
-			</Route>
 			<Route path="/login">
-				<Navbar/>
 				<Login/>
 			</Route>
 			<Route path="/sign-up">

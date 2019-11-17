@@ -23,250 +23,247 @@ class Homepage extends Component {
 		}
 	}
 
-  // TODO: Clean this POC code up
-  componentDidMount() {
+	// TODO: Clean this POC code up
+	componentDidMount() {
 
-    document.addEventListener('DOMContentLoaded',function(event){
-      // array with texts to type in typewriter
-      let dataText = [
-        "market effectively.",
-        "save money.",
-        "attract customers.",
-        "grow your business."
-      ];
+		document.addEventListener('DOMContentLoaded', function (event) {
+			// array with texts to type in typewriter
+			let dataText = [
+				"market effectively.",
+				"save money.",
+				"attract customers.",
+				"grow your business."
+			];
 
-      // type one text in the typwriter
-      // keeps calling itself until the text is finished
-      function typeWriter(text, i, fnCallback) {
-        // chekc if text isn't finished yet
-        if (i < (text.length)) {
-          // add next character to h1
-          document.querySelector(".typewriter").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+			// type one text in the typwriter
+			// keeps calling itself until the text is finished
+			function typeWriter(text, i, fnCallback) {
+				// chekc if text isn't finished yet
+				if (i < (text.length)) {
+					// add next character to h1
+					document.querySelector(".typewriter").innerHTML = text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
 
-          // wait for a while and call this function again for next character
-          setTimeout(function() {
-            typeWriter(text, i + 1, fnCallback)
-          }, 100);
-        }
-        // text finished, call callback if there is a callback function
-        else if (typeof fnCallback == 'function') {
-          // call callback after timeout
-          setTimeout(fnCallback, 700);
-        }
-      }
-      // start a typewriter animation for a text in the dataText array
-      function StartTextAnimation(i) {
-        if (typeof dataText[i] == 'undefined'){
-          setTimeout(function() {
-            StartTextAnimation(0);
-          }, 6000);
-        }
-          // check if dataText[i] exists
-          if ((dataText[i]) && (i < dataText[i].length)) {
-            // text exists! start typewriter animation
-            typeWriter(dataText[i], 0, function(){
-              // after callback (and whole text has been animated), start next text
-              StartTextAnimation(i + 1);
-            });
-          }
-      }
-      // start the text animation
-      StartTextAnimation(0);
-    });
-  }
+					// wait for a while and call this function again for next character
+					setTimeout(function () {
+						typeWriter(text, i + 1, fnCallback)
+					}, 100);
+				}
+				// text finished, call callback if there is a callback function
+				else if (typeof fnCallback == 'function') {
+					// call callback after timeout
+					setTimeout(fnCallback, 700);
+				}
+			}
 
-  render() {
+			// start a typewriter animation for a text in the dataText array
+			function StartTextAnimation(i) {
+				if (typeof dataText[i] == 'undefined') {
+					setTimeout(function () {
+						StartTextAnimation(0);
+					}, 6000);
+				}
+				// check if dataText[i] exists
+				if ((dataText[i]) && (i < dataText[i].length)) {
+					// text exists! start typewriter animation
+					typeWriter(dataText[i], 0, function () {
+						// after callback (and whole text has been animated), start next text
+						StartTextAnimation(i + 1);
+					});
+				}
+			}
+
+			// start the text animation
+			StartTextAnimation(0);
+		});
+	}
+
+	render() {
 		return (
-			<body>
-			<header className="header-global">
-				<nav id="navbar-main" className="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
-					<div className="container">
-						<a className="navbar-brand mr-lg-5" href="/home">
-							<h3>Sidmal</h3>
-						</a>
-						<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global"
-										aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
-							<span className="navbar-toggler-icon"></span>
-						</button>
-						<div className="navbar-collapse collapse" id="navbar_global">
-							<div className="navbar-collapse-header">
-								<div className="row">
-									<div className="col-6 collapse-brand">
-										<a href="/home">
-											<img alt="image" src="./assets/img/brand/blue.png"/>
-										</a>
-									</div>
-									<div className="col-6 collapse-close">
-										<button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbar_global"
-														aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
-											<span></span>
-											<span></span>
-										</button>
-									</div>
-								</div>
-							</div>
-							<ul className="navbar-nav align-items-lg-center ml-lg-auto">
-								<li className="nav-item">
-									<a href="/home" className="nav-link" data-toggle="dropdown" role="button">
-										<i className="ni ni-ui-04 d-lg-none"></i>
-										<span className="nav-link-inner--text">Register</span>
-									</a>
-								</li>
-								<li className="nav-item">
-									<a href="/home" className="nav-link" data-toggle="dropdown" role="button">
-										<i className="ni ni-ui-04 d-lg-none"></i>
-										<span className="nav-link-inner--text">Login</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</nav>
-			</header>
-			<main>
-				<div className="position-relative">
-					<section className="section section-lg section-hero section-shaped">
-						<div className="shape shape-style-1 shape-primary">
-							<span className="span-150"></span>
-							<span className="span-50"></span>
-							<span className="span-50"></span>
-							<span className="span-75"></span>
-							<span className="span-100"></span>
-							<span className="span-75"></span>
-							<span className="span-50"></span>
-							<span className="span-100"></span>
-							<span className="span-50"></span>
-							<span className="span-100"></span>
-						</div>
-						<div className="container shape-container d-flex align-items-center py-lg">
-							<div className="col px-0">
-								<div className="row align-items-center justify-content-center">
-									<div className="col-lg-6 text-center">
-                    <h1>We empower you to</h1>
-                    <h1 className='typewriter'></h1>
-										<p className="lead text-white">So that you can focus on providing quality services.</p>
-										<p className="lead text-white">Try us out free for a limited time!</p>
-										<div className="btn-wrapper mt-5">
-											<a className="try-btn" href="/home">
-												<span className="btn-inner--text">Try Sidmal</span>
+			<section>
+				<header className="header-global">
+					<nav id="navbar-main"
+							 className="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
+						<div className="container">
+							<a className="navbar-brand mr-lg-5" href="/home">
+								<h3>Sidmal</h3>
+							</a>
+							<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global"
+											aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+								<span className="navbar-toggler-icon"></span>
+							</button>
+							<div className="navbar-collapse collapse" id="navbar_global">
+								<div className="navbar-collapse-header">
+									<div className="row">
+										<div className="col-6 collapse-brand">
+											<a href="/home">
+												<img alt="nav-img" src="./assets/img/brand/blue.png"/>
 											</a>
 										</div>
+										<div className="col-6 collapse-close">
+											<button type="button" className="navbar-toggler" data-toggle="collapse"
+															data-target="#navbar_global"
+															aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+												<span></span>
+												<span></span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<ul className="navbar-nav align-items-lg-center ml-lg-auto">
+									<li className="nav-item">
+										<a href="/home" className="nav-link" data-toggle="dropdown" role="button">
+											<i className="ni ni-ui-04 d-lg-none"></i>
+											<span className="nav-link-inner--text">Register</span>
+										</a>
+									</li>
+									<li className="nav-item">
+										<a href="/login" className="nav-link" data-toggle="dropdown" role="button">
+											<i className="ni ni-ui-04 d-lg-none"></i>
+											<span className="nav-link-inner--text">Login</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</header>
+				<main>
+					<div className="position-relative">
+						<section className="section section-lg section-hero section-shaped">
+							<div className="container shape-container d-flex align-items-center py-lg">
+								<div className="col px-0">
+									<div className="row align-items-center justify-content-center">
+										<div className="col-lg-6 text-center">
+											<h1>We empower you to</h1>
+											<h1 className="typewriter"> </h1>
+											<p className="lead text-white">So that you can focus on providing quality services.</p>
+											<p className="lead text-white">Try us out free for a limited time!</p>
+											<div className="btn-wrapper mt-5">
+												<a className="try-btn" href="/home">
+													<span className="btn-inner--text">Try Sidmal</span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div className="separator separator-bottom separator-skew zindex-100">
+								<svg x="0" y="0" viewBox="0 0 3440 200" preserveAspectRatio="none" version="1.1"
+										 xmlns="http://www.w3.org/2000/svg">
+									<polygon className="fill-white" points="0 3440 0 200 4000 50"></polygon>
+								</svg>
+							</div>
+						</section>
+					</div>
+					<section className="section section-components pb-0" id="section-components">
+						<div className="container features-container">
+							<div className="row justify-content-center">
+								<div className="col-lg-12">
+									<h2 className="mb-5">
+										<span>We Provide</span>
+									</h2>
+									<div className="container text-center is-big">
+										<div className="container-fluid">
+											<div className="row pt-2 to-reveal">
+												<div className="col-lg mt-3">
+													<div className="card shadow">
+														<i className="fas fa-chart-area card-headers"></i>
+														<div className="card-body">
+															<h4 className="card-title">Dashboard</h4>
+															<p className="card-text">Custom dashboard for your business that displays graphs of your
+																marketing performance.</p>
+														</div>
+													</div>
+												</div>
+												<div className="col-lg mt-3">
+													<div className="card shadow">
+														<i className="fas fa-poll card-headers"></i>
+														<div className="card-body">
+															<h4 className="card-title">Reviews</h4>
+															<p className="card-text">Centralized feed of customer reviews from Google, Facebook, Yelp
+																and more.</p>
+														</div>
+													</div>
+												</div>
+												<div className="col-lg mt-3">
+													<div className="card shadow">
+														<i className="fas fa-file-alt card-headers"></i>
+														<div className="card-body">
+															<h4 className="card-title">Reporting</h4>
+															<p className="card-text">Customizable reporting displaying your marketing campaigns and
+																their performance.</p>
+														</div>
+													</div>
+												</div>
+												<div className="col-lg mt-3">
+													<div className="card shadow">
+														<i className="fas fa-users card-headers"></i>
+														<div className="card-body">
+															<h4 className="card-title">Acquisition Channels</h4>
+															<p className="card-text">Detailed insights on how your customers are finding your
+																business.
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div className="separator separator-bottom separator-skew zindex-100">
-							<svg x="0" y="0" viewBox="0 0 3440 200" preserveAspectRatio="none" version="1.1"
-									 xmlns="http://www.w3.org/2000/svg">
-								<polygon className="fill-white" points="0 3440 0 200 4000 50"></polygon>
-							</svg>
+					</section>
+					<section className="section section-components">
+						<div className="container">
+							<div className="container-fluid glow-border">
+								<div className="row">
+									<div className="col-lg-7 block-cta align-middle">
+										<h3>Let's Get In Touch!</h3>
+										<p>Leave us some feedback or if you have any questions feel free to write us below.</p>
+										<form className="form" method="" action="">
+											<div className="form-group bmd-form-group">
+												<div className="input-group">
+													<input type="text" className="form-control" placeholder="Name" autoComplete="off"
+																 style={{cursor: "auto"}}/>
+												</div>
+											</div>
+											<div className="form-group bmd-form-group">
+												<div className="input-group">
+													<input type="text" className="form-control" placeholder="Email" autoComplete="off"
+																 style={{cursor: "auto"}}/>
+												</div>
+											</div>
+											<div className="form-group bmd-form-group">
+												<div className="input-group">
+												<textarea placeholder="Message" className="form-control textarea-message"
+																	onKeyDown={this.autoGrow} autoComplete="off"
+																	style={{cursor: "auto"}}/>
+												</div>
+											</div>
+											<input type="submit" className="glow-btn" value="Submit"></input>
+										</form>
+									</div>
+									<div className="col-lg-5 company-name-block align-middle align-items-center justify-content-center">
+										<h1 className="contact-h1">Sidmal</h1>
+									</div>
+								</div>
+							</div>
 						</div>
 					</section>
-				</div>
-				<section className="section section-components pb-0" id="section-components">
-					<div className="container features-container">
-						<div className="row justify-content-center">
-							<div className="col-lg-12">
-								<h2 className="mb-5">
-									<span>We Provide</span>
-								</h2>
-                <div className="container text-center is-big">
-                  <div className="container-fluid">
-                    <div className="row pt-2 to-reveal">
-                      <div className="col-lg mt-3">
-                        <div className="card shadow">
-                          <i className="fas fa-chart-area card-headers"></i>
-                            <div className="card-body">
-                              <h4 className="card-title">Dashboard</h4>
-                              <p className="card-text">Custom dashboard for your business that displays graphs of your marketing performance.</p>
-                            </div>
-                        </div>
-                      </div>
-                      <div className="col-lg mt-3">
-                        <div className="card shadow">
-                          <i className="fas fa-poll card-headers"></i>
-                            <div className="card-body">
-                              <h4 className="card-title">Reviews</h4>
-                              <p className="card-text">Centralized feed of customer reviews from Google, Facebook, Yelp and more.</p>
-                            </div>
-                        </div>
-                      </div>
-                      <div className="col-lg mt-3">
-                        <div className="card shadow">
-                          <i className="fas fa-file-alt card-headers"></i>
-                            <div className="card-body">
-                              <h4 className="card-title">Reporting</h4>
-                              <p className="card-text">Customizable reporting displaying your marketing campaigns and their performance.</p>
-                            </div>
-                        </div>
-                      </div>
-                      <div className="col-lg mt-3">
-                        <div className="card shadow">
-                          <i className="fas fa-users card-headers"></i>
-                            <div className="card-body">
-                              <h4 className="card-title">Acquisition Channels</h4>
-                              <p className="card-text">Detailed insights on how your customers are finding your business.
-                              </p>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section className="section section-components">
+				</main>
+				<footer className="footer has-cards">
 					<div className="container">
-						<div className="container-fluid glow-border">
-							<div className="row">
-								<div className="col-lg-7 block-cta align-middle">
-									<h3>Let's Get In Touch!</h3>
-									<p>Leave us some feedback or if you have any questions feel free to write us below.</p>
-									<form className="form" method="" action="">
-										<div className="form-group bmd-form-group">
-											<div className="input-group">
-												<input type="text" className="form-control" placeholder="Name" autoComplete="off"
-															 style={{cursor: "auto"}}/>
-											</div>
-										</div>
-										<div className="form-group bmd-form-group">
-											<div className="input-group">
-												<input type="text" className="form-control" placeholder="Email" autoComplete="off"
-															 style={{cursor: "auto"}}/>
-											</div>
-										</div>
-										<div className="form-group bmd-form-group">
-											<div className="input-group">
-												<textarea placeholder="Message" className="form-control textarea-message" onKeyDown={this.autoGrow} autoComplete="off"
-															 style={{cursor: "auto"}}/>
-											</div>
-										</div>
-										<input type="submit" className="glow-btn" value="Submit"></input>
-									</form>
-								</div>
-								<div className="col-lg-5 company-name-block align-middle align-items-center justify-content-center">
-									<h1 className="contact-h1">Sidmal</h1>
+						<hr/>
+						<div className="row align-items-center justify-content-md-between">
+							<div className="col-md-6">
+								<div className="copyright">
+									&copy; 2019 Spencer Holdings & Company LLC.
 								</div>
 							</div>
 						</div>
 					</div>
-				</section>
-			</main>
-			<footer className="footer has-cards">
-				<div className="container">
-					<hr/>
-					<div className="row align-items-center justify-content-md-between">
-						<div className="col-md-6">
-							<div className="copyright">
-								&copy; 2019 Spencer Holdings & Company LLC.
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
-			</body>);
+				</footer>
+			</section>);
 	}
 }
 

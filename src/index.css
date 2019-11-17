@@ -1,10 +1,10 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif !important;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   color: #8082a0;
-  background-color: #03041a;
+  background-color: #03041a  !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
