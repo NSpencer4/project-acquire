@@ -4,7 +4,6 @@ import '../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 
 class Homepage extends Component {
 	autoGrow(el) {
-		console.log('called');
 		if (el) {
 			// Reset field height
 			el.target.style.height = 'inherit';
