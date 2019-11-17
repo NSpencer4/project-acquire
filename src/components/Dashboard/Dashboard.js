@@ -21,19 +21,7 @@ import Chart from "../Chart/Chart";
 import Deposits from "../Deposits/Deposits";
 import Orders from "../Orders/Orders";
 import {mainListItems, secondaryListItems} from "../ListItems/ListItems";
-
-function Copyright() {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="https://material-ui.com/">
-                Your Website
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
+import './Dashboard.css';
 
 const drawerWidth = 240;
 
@@ -50,6 +38,7 @@ const useStyles = makeStyles(theme => ({
         justifyContent: 'flex-end',
         padding: '0 8px',
         ...theme.mixins.toolbar,
+        color: '#efefef',
     },
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
@@ -57,6 +46,7 @@ const useStyles = makeStyles(theme => ({
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
+        backgroundColor: '#15162c'
     },
     appBarShift: {
         marginLeft: drawerWidth,
@@ -83,6 +73,8 @@ const useStyles = makeStyles(theme => ({
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.enteringScreen,
         }),
+        backgroundColor: '#15162c',
+        color: '#efefef',
     },
     drawerPaperClose: {
         overflowX: 'hidden',
@@ -110,6 +102,7 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         overflow: 'auto',
         flexDirection: 'column',
+        backgroundColor: '#efefef',
     },
     fixedHeight: {
         height: 240,
@@ -159,7 +152,7 @@ export default function Dashboard() {
                 open={open}
             >
                 <div className={classes.toolbarIcon}>
-                    <IconButton onClick={handleDrawerClose}>
+                    <IconButton color="inherit" onClick={handleDrawerClose}>
                         <ChevronLeftIcon />
                     </IconButton>
                 </div>
@@ -192,7 +185,6 @@ export default function Dashboard() {
                         </Grid>
                     </Grid>
                 </Container>
-                <Copyright />
             </main>
         </div>
     );
