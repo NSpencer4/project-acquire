@@ -1,3 +1,33 @@
 #login-btn {
     float: right;
 }
+
+.nav-container {
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    border-bottom: 1px solid #0fd9b6;
+    box-shadow: 0 0 30px 0 rgba(15,217,182,.36);
+    background-color: #03041a !important;
+}
+
+.MuiAppBar-colorPrimary {
+    z-index: 1;
+    box-shadow: none !important;
+}
+
+.navbar {
+    background: #03041a;
+}
+
+.navbar-collapse.show {
+    background: #03041a;
+}
+
+.MuiAppBar-colorPrimary {
+    background: #03041a !important;
+}
+
+.nav-link-inner--text {
+    color: #efefef;
+}

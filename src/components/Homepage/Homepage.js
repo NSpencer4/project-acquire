@@ -34,10 +34,8 @@ class Homepage extends Component {
 				"grow your business."
 			];
 
-			// type one text in the typwriter
 			// keeps calling itself until the text is finished
 			function typeWriter(text, i, fnCallback) {
-				// chekc if text isn't finished yet
 				if (i < (text.length)) {
 					// add next character to h1
 					document.querySelector(".typewriter").innerHTML = text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
@@ -79,53 +77,6 @@ class Homepage extends Component {
 	render() {
 		return (
 			<section>
-				<header className="header-global">
-					<nav id="navbar-main"
-							 className="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
-						<div className="container">
-							<a className="navbar-brand mr-lg-5" href="/home">
-								<h3>Sidmal</h3>
-							</a>
-							<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global"
-											aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
-								<span className="navbar-toggler-icon"></span>
-							</button>
-							<div className="navbar-collapse collapse" id="navbar_global">
-								<div className="navbar-collapse-header">
-									<div className="row">
-										<div className="col-6 collapse-brand">
-											<a href="/home">
-												<img alt="nav-img" src="./assets/img/brand/blue.png"/>
-											</a>
-										</div>
-										<div className="col-6 collapse-close">
-											<button type="button" className="navbar-toggler" data-toggle="collapse"
-															data-target="#navbar_global"
-															aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
-												<span></span>
-												<span></span>
-											</button>
-										</div>
-									</div>
-								</div>
-								<ul className="navbar-nav align-items-lg-center ml-lg-auto">
-									<li className="nav-item">
-										<a href="/home" className="nav-link" data-toggle="dropdown" role="button">
-											<i className="ni ni-ui-04 d-lg-none"></i>
-											<span className="nav-link-inner--text">Register</span>
-										</a>
-									</li>
-									<li className="nav-item">
-										<a href="/login" className="nav-link" data-toggle="dropdown" role="button">
-											<i className="ni ni-ui-04 d-lg-none"></i>
-											<span className="nav-link-inner--text">Login</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</nav>
-				</header>
 				<main>
 					<div className="position-relative">
 						<section className="section section-lg section-hero section-shaped">
